@@ -3,7 +3,7 @@ import java.util.regex.Pattern;
 public class Customer {
     private String firstName;
     private String lastName;
-    private String email;
+    public String email;
 
     public Customer(String firstName, String lastName, String email) {
         this.firstName = firstName;
