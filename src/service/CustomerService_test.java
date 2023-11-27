@@ -4,7 +4,7 @@ import model.Customer;
 
 import java.util.Collection;
 
-public class service_tester {
+public class CustomerService_test {
     public static void main(String[] args) {
 
         // testing getAllCustomers:

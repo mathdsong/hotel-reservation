@@ -1,5 +1,5 @@
 package model;
-public class model_tester {
+public class Customer_test {
     public static void main(String[] args) {
         Customer customer = new Customer("first", "last", "fl@domain.com");
         System.out.println(customer);
