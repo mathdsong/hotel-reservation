@@ -7,7 +7,7 @@ import java.util.Collection;
 
 public class CustomerService {
 
-    static Collection<Customer> customersList = new ArrayList<Customer>();
+    public static Collection<Customer> customersList = new ArrayList<Customer>();
     public static void addCustomer(String email, String firstName, String lastName) {
         Customer newCustomer = new Customer(firstName, lastName, email);
         customersList.add(newCustomer);

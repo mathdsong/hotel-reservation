@@ -9,8 +9,8 @@ import java.util.*;
 public class ReservationService {
 
     static Collection<Reservation> allReservations = new ArrayList<Reservation>();
-    static Collection<IRoom> allRooms = new ArrayList<IRoom>();
-    public void addRoom(IRoom room) {
+    public static Collection<IRoom> allRooms = new ArrayList<IRoom>();
+    public static void addRoom(IRoom room) {
         allRooms.add(room);
     }
 
@@ -66,7 +66,7 @@ public class ReservationService {
         return resForThisCustomer;
     }
 
-    public void printAllReservation() {
+    public static void printAllReservation() {
         System.out.println(allReservations);
     }
 }
