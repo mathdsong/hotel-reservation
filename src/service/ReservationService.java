@@ -8,13 +8,13 @@ import java.util.*;
 
 public class ReservationService {
 
-    Collection<Reservation> allReservations = new ArrayList<Reservation>();
-    Collection<IRoom> allRooms = new ArrayList<IRoom>();
+    static Collection<Reservation> allReservations = new ArrayList<Reservation>();
+    static Collection<IRoom> allRooms = new ArrayList<IRoom>();
     public void addRoom(IRoom room) {
         allRooms.add(room);
     }
 
-    public IRoom getARoom(String roomId) {
+    public static IRoom getARoom(String roomId) {
         for (IRoom room : allRooms) {
             if (room.getRoomNumber().equals(roomId)) {
                 return room;
@@ -23,13 +23,13 @@ public class ReservationService {
         return null;
     }
 
-    public Reservation reserveARoom(Customer customer, IRoom room, Date checkInDate, Date checkOutDate) {
+    public static Reservation reserveARoom(Customer customer, IRoom room, Date checkInDate, Date checkOutDate) {
         Reservation res = new Reservation(customer, room, checkInDate, checkOutDate);
         allReservations.add(res);
         return res;
     }
 
-    public Collection<IRoom> findRooms(Date checkInDate, Date checkOutDate) {
+    public static Collection<IRoom> findRooms(Date checkInDate, Date checkOutDate) {
         Collection<IRoom> qualifiedRooms = new ArrayList<>();
         for (IRoom room : allRooms) {
             for (Reservation reservation : allReservations) {
@@ -56,7 +56,7 @@ public class ReservationService {
         return qualifiedRooms;
     }
 
-    public Collection<Reservation> getCustomerReservation(Customer customer) {
+    public static Collection<Reservation> getCustomerReservation(Customer customer) {
         Collection<Reservation> resForThisCustomer = new ArrayList<>();
         for (Reservation reservation : allReservations) {
             if (reservation.customer.equals(customer)) {
